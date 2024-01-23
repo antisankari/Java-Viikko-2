@@ -24,12 +24,12 @@ public class Tuuletin {
     public static void main(String[] args) {
         Tuuletin fan0 = new Tuuletin();
         Tuuletin fan1 = new Tuuletin();
-        fan0.setNopeus(1);
+        fan0.setNopeus(2);
         fan0.setHalkaisija(10.0);
         fan0.setVari("keltainen");
         fan0.setKytketty(true);
         System.out.println(fan0);
-        fan1.setNopeus(2);
+        fan1.setNopeus(1);
         fan1.setHalkaisija(5.0);
         fan1.setVari("blue");
         fan1.setKytketty(false);
