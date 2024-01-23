@@ -1,14 +1,14 @@
 /**
  * Tuuletin.java
- *
  * @author Anssi Sankari
  * @version 1.00 2024/01/16
+ * Kuvataan tuulettimen toimintaa sisältäen sen nopeuden, käyntitilan ja värin.
  */
 public class Tuuletin {
-    private static int hidas = 1;
+    private static int hidas = 1; //
     private static int normaali = 2;
     private static int nopea = 3;
-    private int nopeus = 1;
+    private int nopeus = hidas;
     private boolean kytketty = false;
     private double halkaisija = 5.0;
     private String vari = "blue";
@@ -24,7 +24,7 @@ public class Tuuletin {
     public static void main(String[] args) {
         Tuuletin fan0 = new Tuuletin();
         Tuuletin fan1 = new Tuuletin();
-        fan0.setNopeus(3);
+        fan0.setNopeus(1);
         fan0.setHalkaisija(10.0);
         fan0.setVari("keltainen");
         fan0.setKytketty(true);
@@ -45,9 +45,22 @@ public class Tuuletin {
         this.kytketty = kytketty;
     }
 
-    public int getNopeus() {
+    public String getNopeus() {
+        switch (this.nopeus) {
+            case 1:
+                return "hidas";
+            case 2:
+                return "normaali";
+            case 3:
+                return "nopea";
+            default:
+                return "hidas";
+        }
+    }
+    /*public int getNopeus() {
         return this.nopeus;
     }
+     */
 
     public void setNopeus(int nopeus) {
         this.nopeus = nopeus;
