@@ -1,0 +1,425 @@
+tehtävä 1 Biisi
+public class Biisi {
+
+    private String nimi;
+    private String esittaja;
+    private int spotifySoittomaara;
+
+    /**
+     * Konstruktori
+     * @param nimi
+     * @param esittaja
+     * @param spotifySoittomaara
+     */
+    public Biisi(String nimi, String esittaja, int spotifySoittomaara) {
+        this.nimi = nimi;
+        this.esittaja = esittaja;
+        this.spotifySoittomaara = spotifySoittomaara;
+    }
+
+    //setterit
+    public void setNimi(String nimi) {
+        this.nimi = nimi;
+    }
+
+    public void setEsittaja(String esittaja) {
+        this.esittaja = esittaja;
+    }
+
+    public void setSpotifySoittomaara(int spotifySoittomaara) {
+        this.spotifySoittomaara = spotifySoittomaara;
+    }
+
+    //getterit
+    public String getNimi() {
+        return this.nimi;
+    }
+
+    public String getEsittaja() {
+        return this.esittaja;
+    }
+
+    public int getSpotifySoittomaara() {
+        return this.spotifySoittomaara;
+    }
+    // pääohjelma
+    public static void main(String[] args){}
+}
+
+tehtävä 2 Laskuri
+public class Laskuri {
+
+    private int luku1, luku2;
+    private String s1;
+
+    public Laskuri(){
+        this.luku1 = 0;
+        this.luku2 = 0;
+    }
+
+    public Laskuri(int luku1, int luku2, String s1) {
+        this.luku1 = luku1;
+        this.luku2 = luku2;
+        this.s1 = s1;
+    }
+    public int kerro() {
+        int tulo = luku1 * luku2;
+        return tulo;
+    }
+
+    //pääohjelma
+    public static void main(String[] args){
+        Laskuri laskin1 = new Laskuri(23,29,"Moikka");
+        System.out.println(laskin1.luku1 + " " + laskin1.luku2 + " " + laskin1.s1);
+        System.out.println(laskin1.kerro());
+        System.out.println(laskin1.s1);
+    }
+}
+
+tehtävä 3 Juttu
+public class Juttu {
+    private int x;
+    private int y;
+    private static int z = 0;
+
+    public Juttu() {
+        x = z;
+        y = z;
+    }
+
+    static void asetaJuttu(int a) {
+        z = a;
+    }
+
+    //pääohjelma
+    public static void main(String[] args) {
+        Juttu yksi = new Juttu();
+        Juttu kaksi = new Juttu();
+        Juttu kolme = new Juttu();
+
+        // e)
+        Juttu.asetaJuttu(9);
+
+        //System.out.println("Tämä on yksi:" + yksi.z);
+        //System.out.println("Tämä on kaksi:" + kaksi.z);
+        //System.out.println("Tämä on kolme:" + kolme.z);
+    }
+
+    /*
+    a, b & c)
+    pääohjelmassa luotiin kolme erillistä muuttujaa x, kolme erillistä muuttujaa y ja kolme erillistä muuttujaa z,
+    koska luokan Juttu arvot ovat yksityisiä ja ilmentymiä on yhteensä kolme
+    d) kaikkien ilmentymien kenttien x ja y arvo on 0
+     */
+
+}
+
+tehtävä 4 Suorakulmio
+public class Suorakulmio {
+    private double leveys;
+    private double korkeus;
+
+    public Suorakulmio() {
+        this.leveys = 1.0;
+        this.korkeus = 1.0;
+    }
+
+    public Suorakulmio(double lev, double kor) {
+        this.leveys = lev;
+        this.korkeus = kor;
+    }
+
+    //getterit
+    public double getAla() {
+        return leveys * korkeus;
+    }
+
+    public double getYmparys() {
+        return (2 * leveys) + (2 *  korkeus);
+    }
+
+    //pääohjelma
+    public static void main(String[] args) {
+        Suorakulmio kulmio1 = new Suorakulmio(4.0,40.0);
+        Suorakulmio kulmio2 = new Suorakulmio(3.5,35.9);
+
+        System.out.println("kulmio1 leveys: " + kulmio1.leveys + " korkeus: " + kulmio1.korkeus + " pinta-ala: " + kulmio1.getAla() + " ympärysmitta: " + kulmio1.getYmparys());
+        System.out.println("kulmio2 leveys: " + kulmio2.leveys + " korkeus: " + kulmio2.korkeus + " pinta-ala: " + kulmio2.getAla() + " ympärysmitta: " + kulmio2.getYmparys());
+    }
+}
+
+tehtävä 5 Osake
+public class Osake {
+    public String symboli;
+    public String nimi;
+    private double edellinenHinta;
+    private double nykyinenHinta;
+
+    //konstruktori
+    public Osake(String symboli, String nimi, double edellinenHinta, double nykyinenHinta) {
+        this.symboli = symboli;
+        this.nimi = nimi;
+        this.edellinenHinta = edellinenHinta;
+        this.nykyinenHinta = nykyinenHinta;
+    }
+
+    //setterit
+    public void setNimi(String nimi) {
+        this.nimi = nimi;
+    }
+
+    public void setSymboli(String symboli) {
+        this.symboli = symboli;
+    }
+
+    public void setEdellinenHinta(double edellinenHinta) {
+        this.edellinenHinta = edellinenHinta;
+    }
+
+    public void setNykyinenHinta(double nykyinenHinta) {
+        this.nykyinenHinta = nykyinenHinta;
+    }
+
+    //getterit
+    public double getMuutosProsentti() {
+        return ((this.nykyinenHinta - this.edellinenHinta)/this.edellinenHinta * 100);
+    }
+
+    public String getOsakeNimi() {
+        return this.nimi;
+    }
+
+    public String getOsakeSymboli() {
+        return this.symboli;
+    }
+
+    public double getEdellinenHinta() {
+        return this.edellinenHinta;
+    }
+
+    public double getNykyinenHinta() {
+        return this.nykyinenHinta;
+    }
+
+    public double getHinnanMuutos() {
+        return this.edellinenHinta - this.nykyinenHinta;
+    }
+
+    public String toString() {
+        return "Osakkeen nimi: " + this.nimi
+                + "\nOsakkeen tikkeri: " + this.symboli
+                + "\nHinta eilen: " + this.edellinenHinta
+                + "\nHinta tänään: " + this.nykyinenHinta
+                + "\nHinnan muutos: " + String.format("%.2f", getHinnanMuutos())
+                + "\nMuutos pros %: " + String.format("%.2f", getMuutosProsentti());
+    }
+
+    // pääohjelma
+    public static void main(String[] args) {
+        Osake lottolappu = new Osake("NOK","Nokia OYJ",34.5,34.35);
+        System.out.println(lottolappu);
+
+        //testiosake alla
+        /*
+        Osake toTheMoon = new Osake("KEMPOWR", "Kempower", 30.46, 29.76);
+        System.out.println(toTheMoon);
+         */
+
+        //toimii myös tällä kutsulla
+        /*
+        System.out.println("Osakkeen nimi: " + lottolappu.getOsakeNimi()
+                + "\nOsakkeen tikkeri: " + lottolappu.getOsakeSymboli()
+                + "\nHinta eilen: " + lottolappu.getEdellinenHinta()
+                + "\nHinta tänään: " + lottolappu.getNykyinenHinta()
+                + "\nHinnan muutos: " + String.format("%.2f", lottolappu.getHinnanMuutos())
+                + "\nMuutos pros %: " + String.format("%.2f", lottolappu.getMuutosProsentti()));
+
+         */
+    }
+}
+
+tehtävä 6 Tili
+/**
+ * @Tili.java
+ * @author Anssi Sankari
+ * @version 1.00 2024/01/16
+ */
+import java.util.Date;
+import java.lang.Math;
+public class Tili {
+    private int id;
+    private double saldo = 0.0;
+    private double vuosiKorko = 0.0;
+    private Date luontiPaiva;
+
+
+    public Tili() {
+        this.luontiPaiva = new Date();
+    }
+    public Tili(int id, double saldo) {
+        this.id = id;
+        this.saldo = saldo;
+        this.luontiPaiva = new Date();
+    }
+
+    //methods
+
+    /**
+     * metodi nosto vähentää saldosta nostetun summan ja palauttaa uuden saldon
+     * @param nostoSumma summa joka nostetaan tililtä
+     * @return palauttaa uuden saldon
+     */
+    public double nosto(double nostoSumma) {
+        this.saldo -= nostoSumma;
+        return this.saldo;
+    }
+
+    /**
+     * metodi talleta lisää saldoon talletettavan summan ja palauttaa uuden saldon
+     * @param talletusSumma summa joka talletetaan tilille
+     * @return palauttaa uuden saldon
+     */
+    public double talleta(double talletusSumma) {
+        this.saldo += talletusSumma;
+        return this.saldo;
+    }
+
+    //setters
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+    public void setVuosiKorko(double vuosiKorko) {
+        this.vuosiKorko = vuosiKorko;
+    }
+
+    //getters
+    public int getId() {
+        return this.id;
+    }
+
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    public double getVuosiKorko() {
+        return this.vuosiKorko;
+    }
+
+    public Date getLuontiPaiva() {
+        return this.luontiPaiva;
+    }
+
+    public double getKuukausiKorkoProsentti() {
+        double kuukausiKorkoPros = Math.pow((1.0 + (this.vuosiKorko / 100.0)), (1.0 / 12.0)) - 1.0;
+        return kuukausiKorkoPros;
+    }
+    public double getKuukausiKorko() {
+        double kuukausiKorkoSumma = this.saldo * (1 + getKuukausiKorkoProsentti()) - this.saldo;
+        return kuukausiKorkoSumma;
+    }
+
+    //pääohjelma
+    public static void main(String[] args) {
+        Tili omaTili = new Tili(1122,20000.0);
+        omaTili.setVuosiKorko(4.5);
+        System.out.println(omaTili.vuosiKorko);
+        //System.out.println(omaTili.saldo);
+        //omaTili.nosto(2500);
+        //System.out.println(omaTili.saldo);
+        //omaTili.talleta(3000.0);
+        System.out.println(omaTili.saldo);
+        System.out.println("Tämä on kk-korko%: " + String.format("%.3f", omaTili.getKuukausiKorkoProsentti()));
+        System.out.println("Tämä on kk-korko summa: " + String.format("%.2f", omaTili.getKuukausiKorko()));
+        System.out.println(omaTili.getLuontiPaiva());
+
+    }
+}
+
+Tehtävä 7 Tuuletin
+/**
+ * Tuuletin.java
+ *
+ * @author Anssi Sankari
+ * @version 1.00 2024/01/16
+ */
+public class Tuuletin {
+    private static int hidas = 1;
+    private static int normaali = 2;
+    private static int nopea = 3;
+    private int nopeus = 1;
+    private boolean kytketty = false;
+    private double halkaisija = 5.0;
+    private String vari = "blue";
+
+    //parametriton konstruktori luokalle
+    /*
+    public Tuuletin() {
+
+
+    }*/
+
+    //pääohjelma
+    public static void main(String[] args) {
+        Tuuletin fan0 = new Tuuletin();
+        Tuuletin fan1 = new Tuuletin();
+        fan0.setNopeus(3);
+        fan0.setHalkaisija(10.0);
+        fan0.setVari("keltainen");
+        fan0.setKytketty(true);
+        System.out.println(fan0);
+        fan1.setNopeus(2);
+        fan1.setHalkaisija(5.0);
+        fan1.setVari("blue");
+        fan1.setKytketty(false);
+        System.out.println(fan1);
+    }
+
+    //getters and setters
+    public boolean getKytketty() {
+        return this.kytketty;
+    }
+
+    public void setKytketty(boolean kytketty) {
+        this.kytketty = kytketty;
+    }
+
+    public int getNopeus() {
+        return this.nopeus;
+    }
+
+    public void setNopeus(int nopeus) {
+        this.nopeus = nopeus;
+    }
+
+    public double getHalkaisija() {
+        return this.halkaisija;
+    }
+
+    public void setHalkaisija(double halkaisija) {
+        this.halkaisija = halkaisija;
+    }
+
+    public String getVari() {
+        return this.vari;
+    }
+
+    public void setVari(String vari) {
+        this.vari = vari;
+    }
+
+    //toString palauttaja
+    public String toString() {
+        if (getKytketty()) {
+            return "Nopeus: " + getNopeus()
+                    + ", Väri: " + getVari()
+                    + ", Säde: " + (getHalkaisija() / 2);
+        } else {
+            return "Väri: " + getVari()
+                    + ", Halkaisija: " + getHalkaisija()
+                    + ", tuuletin ei ole päällä";
+        }
+    }
+}
