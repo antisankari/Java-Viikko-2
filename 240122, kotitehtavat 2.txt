@@ -338,7 +338,6 @@ public class Tili {
     }
 }
 
-Tehtävä 7 Tuuletin
 /**
  * Tuuletin.java
  * @author Anssi Sankari
@@ -398,7 +397,9 @@ public class Tuuletin {
                 return "hidas";
         }
     }
-    /*public int getNopeus() {
+    /*
+    testi getteri nopeudelle, tarkoituksella kommentoitu pois
+    public int getNopeus() {
         return this.nopeus;
     }
      */
@@ -436,4 +437,3 @@ public class Tuuletin {
         }
     }
 }
-
